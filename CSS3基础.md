@@ -1,8 +1,11 @@
 ###一、引入外来字体
-```@font-face{
+
+```
+@font-face{
     font-family: fontname;
     src: url("Sansation_Light.ttf"),url("Sansation_Light.eot")/* IE9+ */
-}```
+}
+```
 
 ###二、文字倒影
 box-reflect: 方向 间距 渐变效果<br/>
