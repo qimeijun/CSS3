@@ -60,3 +60,18 @@ rotate3d(x, y, z, 旋转角度)<br/>
 -ms-transform: rotate3d(1, -1, 0, 60deg);
 transform: rotate3d(1, -1, 0, 60deg);
 ```
+
+###九、清除浮动
+1、使用`clear:  left、right、both`<br/>
+`clear:left` 表示左边不能出现浮动<br/>
+`clear:right`  表示右边不能出现浮动<br/>
+`clear:both` 表示两边都不能出现浮动<br/>
+2、对父类元素使用`:after`伪类<br/>
+```
+.clearfix:after {
+    content: '020';
+    display: black;
+    height: 0;
+    clear: both;
+}
+```
