@@ -75,3 +75,76 @@ transform: rotate3d(1, -1, 0, 60deg);
     clear: both;
 }
 ```
+
+###十、服务商前缀
+```
+-webkit  webkit核心浏览器， 包括Chrome, Safari等
+-ms      IE浏览器
+-o       Opera浏览器
+-moz     火狐浏览器
+```
+
+通常在解决兼容性的时候，一般把服务商前缀的属性放在前面，W3C的标准属性放在最后面，这样即使出现不一致的情况，后书写的符合W3C标准的属性，会覆盖前面带有属性前缀的定义。
+
+
+###十一、弹性盒子布局
+弹性盒子布局相对于传统的div float 布局方式要简单很多。目前支持的浏览器webkit核心、火狐、IE10<br/>
+
+1、布局方式
+```
+.father {display: box;}
+.son1{box-flex: 1}
+.son2{box-flex: 3}
+.son3{box-flex: 1}
+
+<div class="father">
+    <div class="son1"></div>
+    <div class="son2"></div>
+    <div class="son3"></div>
+</div>
+```
+2、控制布局方向<br/>
+在父元素中定义`box-orient:horizontal` ,来控制布局方向<br/>
+horizontal、vertical、inline-axis、block-axis、inherit。<br/>
+
+3、控制元素对齐方式<br/>
+`box-align: start`<br/>
+参数： start、end、center、baseline、stretch<br/>
+
+4、控制元素顺序<br/>
+`box-direction: reverse`<br/>
+参数：normal、reverse、inherit<br/>
+
+###十二、三种布局方式
+1、最传统的布局方式---固定式布局<br/>
+固定页面的宽度，一般在950/960像素，为了效果，通常使用栅格化系统，把页面分成N列，N 越多，页越灵活<br/>
+```
+.contianer {
+    width: 960px;
+}
+```
+2、流式布局<br/>
+流式布局相对固定式布局而言要灵活许多，不会因为页面缩小而显示不全。<br/>
+流式布局最大的特点：计算列百分比，在栅格化列宽是我们可以使用百分比来设置，而不是固定的像素了<br/>
+```
+.contianer {
+    width: 100%
+}
+```
+3、最流行的布局----响应式布局<br/>
+不同的终端分辨率不一样，如何让页面在每个终端都能完美的展示，那就是使用响应式布局<br/>
+特点：通过媒介查询<br/>
+与流式布局唯一不同的就是通过媒介查询，根据不同的媒介，显示不同的效果<br/>
+```
+@media only screen {
+    .contianer {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 40%) {
+    .contianer {
+        width: 90%;
+    }
+}
+```
